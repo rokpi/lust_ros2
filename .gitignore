@@ -1,0 +1,5 @@
+# Ignoriraj začasne datoteke in mape
+build/
+install/
+log/
+*.tmp
