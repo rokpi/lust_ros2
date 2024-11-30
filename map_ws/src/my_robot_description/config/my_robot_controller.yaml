@@ -1,0 +1,10 @@
+diff_drive_controller:
+  type: "diff_drive_controller/DiffDriveController"
+  left_wheel: rear_left_wheel
+  right_wheel: rear_right_wheel
+  publish_wheel_joint_controller_states: true
+  wheel_separation: 0.3
+  wheel_radius: 0.05
+  odom_frame_id: odom
+  base_frame_id: base_link
+  publish_rate: 50
