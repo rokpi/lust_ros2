@@ -11,7 +11,7 @@ import pyads
 import atexit
 
 
-class SubscribeJoy(Node):
+class PLC_mod(Node):
 
     def __init__(self):
         super().__init__('subscribe_joy')
@@ -80,7 +80,7 @@ class SubscribeJoy(Node):
                 self.safety = False
                 self.plc.write_by_name('G_MAIN.Stop', True, pyads.PLCTYPE_BOOL) 
                 self.plc.write_by_name('G_MAIN.bBoolean', True, pyads.PLCTYPE_BOOL) 
-                self.get_logger().info('STOP!')
+                #self.get_logger().info('STOP!')
 
             else:
                  self.safety = True
@@ -102,7 +102,7 @@ class SubscribeJoy(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    subscribe_joy = SubscribeJoy()
+    subscribe_joy = PLC_mod()
     atexit.register(subscribe_joy.close_plc)
 
     rclpy.spin(subscribe_joy)
